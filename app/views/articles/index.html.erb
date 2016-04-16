@@ -1,11 +1,11 @@
-<h1>Listing all articles</h1>
+<h1>Artikel overzicht</h1>
 <p>
-  <%= link_to "Create new article", new_article_path %>
+  <%= link_to "Plaats een nieuw artikel", new_article_path %>
 </p>
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
+    <th>Artikelnaam</th>
+    <th>Artikel omschrijving</th>
   </tr>
   
   <% @articles.each do |article| %>
