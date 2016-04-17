@@ -1,12 +1,13 @@
-<h1>Artikel omschrijving:</h1>
-
-<p>
-  Title: <%= @article.title %>
-</p>
-
-<p>
-  Description: <%= @article.description %>
-</p>
-
-<%= link_to "Wijzig dit artikel", edit_article_path(@article) %> |
-<%= link_to "Artikelen", articles_path %>
+<h2 align="center">Title: <%= @article.title %></h2>
+  <div class="well col-xs-8 col-xs-offset-2">
+    <h4 class="center description"><strong>Omschrijving:</strong></h4>
+  <hr>
+  <%= simple_format(@article.description) %>
+  <div class="article-actions">
+    <%= link_to "Wijzig dit artikel", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+    <%= link_to "Verwijder dit artikel", article_path(@article), method: :delete, 
+                                          data: { confirm: "Weet u zeker dat u dit artikel wilt verwijderen?"},
+                                          class: "btn btn-xs btn-danger" %>
+    <%= link_to "Alle artikelen", articles_path, class: "btn  btn-xs btn-success" %>
+    </div>
+  </div>

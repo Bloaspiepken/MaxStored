@@ -31,12 +31,21 @@ $navbar-default-bg: black;
   color: #fff;
   text-align: center;
   margin-bottom: 30px;
-  letter-spacing: 5px;
+  letter-spacing: 8px;
   font-weight: bold;
 }
 .btn-xlarge {
   font-size: 1.7em;
   background-color: black;
+}
+
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
+.description {
+  margin-top: 0;
 }
 
 footer {
