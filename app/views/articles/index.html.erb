@@ -1,20 +1,23 @@
-<h1>Artikel overzicht</h1>
-<p>
-  <%= link_to "Plaats een nieuw artikel", new_article_path %>
-</p>
-<table>
-  <tr>
-    <th>Artikelnaam</th>
-    <th>Artikel omschrijving</th>
-  </tr>
-  
+<h1 align="center">Artikel overzicht</h1>
+
   <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.description %></td>
-    <td><%= link_to 'Wijzig', edit_article_path(article) %></td>
-    <td><%= link_to 'Show', article_path(article) %></td>
-    <td><%= link_to 'Verwijder', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
-  </tr>
-  <% end %>
-</table>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class"well well-lg">
+        <div class="article-title">
+         <%= link_to article.title, article_path(article) %>
+        </div>
+        <div class="article-body">
+          <%= truncate(article.description, length: 100) %>
+        </div>
+       <div class="article-actions">
+        <%= link_to "Wijzig dit artikel", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+        <%= link_to "Verwijder dit artikel", article_path(article), method: :delete, 
+                                          data: { confirm: "Weet u zeker dat u dit artikel wilt verwijderen?"},
+                                          class: "btn btn-xs btn-danger" %>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
