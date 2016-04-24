@@ -13,13 +13,15 @@
                                   last updated: <%= time_ago_in_words(article.updated_at) %> ago</small>
           </div>
         </div>
-       <div class="article-actions">
-        <%= link_to "Wijzig dit artikel", edit_article_path(article), class: "btn btn-xs btn-primary" %>
-        <%= link_to "Verwijder dit artikel", article_path(article), method: :delete, 
+        <% if logged_in? && current_user == article.user %>
+          <div class="article-actions">
+            <%= link_to "Wijzig dit artikel", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+            <%= link_to "Verwijder dit artikel", article_path(article), method: :delete, 
                                           data: { confirm: "Weet u zeker dat u dit artikel wilt verwijderen?"},
                                           class: "btn btn-xs btn-danger" %>
     
-        </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
