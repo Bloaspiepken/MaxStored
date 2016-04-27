@@ -1,4 +1,5 @@
 $navbar-default-bg: black;
+$navbar-default-font: white;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -8,13 +9,21 @@ $navbar-default-bg: black;
   font-size: 1.7em;
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   font-weight: bold;
 }
 
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+#knoppen {
+  color: #fff;
+}
+
+#header-menu {
+  color: green;
 }
 
 .center {
@@ -25,6 +34,7 @@ $navbar-default-bg: black;
   background-image: asset-url('maxstored_home_view.jpg');
   background-size: cover;
   height: 550px;
+  width: 800px;
 }
 
 .jumbotron h1 {
@@ -34,6 +44,7 @@ $navbar-default-bg: black;
   letter-spacing: 8px;
   font-weight: bold;
 }
+
 .btn-xlarge {
   font-size: 1.7em;
   background-color: black;
@@ -71,8 +82,8 @@ $navbar-default-bg: black;
 
 .badge {
   background-color: #CEF6F5;  
-  text-transform: uppercase;
-  letter-spacing: -1px;
+  text-transform: downcase;
+  letter-spacing: 1px;
   font-weight: bold;
 }
 

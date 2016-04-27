@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Welkom als MaxStored supplier #{@user.username}"
+      flash[:success] = "Welkom als MaxStored aanbieder #{@user.username}"
       redirect_to user_path(@user)
     else
       render 'new'
